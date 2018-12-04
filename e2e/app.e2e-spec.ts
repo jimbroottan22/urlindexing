@@ -34,14 +34,14 @@ describe('pok App', () => {
             loginPage.searchBtn.click();
             browser.sleep(1000);
             browser.wait(function() {
-                return loginPage.requestBtn.isPresent().then(function(result) {
-                    return result;
+                return loginPage.outsidediv.isPresent().then(function(result) {
+                    return !result;
                 });
             }, 20000);
             loginPage.requestBtn.isPresent().then((text) => {
                 console.log(text);
             });
-            browser.sleep(1000);
+            browser.sleep(2000);
             loginPage.requestBtn.click();
             browser.wait(function() {
                 return loginPage.gotitBtn.isPresent().then(function(result) {
